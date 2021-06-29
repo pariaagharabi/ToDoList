@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<h1 class="teal-color">Todo List
+    <a href="/create"><i class="fa fa-plus teal-color fa-1x"></i></a>
+</h1>
+{% for tdl in tdls %}
+
+<div>
+    <a class="btn" href="/{{tdl.id}}/edit"><i class="fa fa-edit"></i></a>
+    <a class="teal-color" href="/{{tdl.id}}">{{tdl.name}}</a>
+    <a class="btn" href="/{{tdl.id}}/delete"><i class="fa fa-trash"></i></a>
+</div>
+
+{% endfor %}
+{% endblock %}
